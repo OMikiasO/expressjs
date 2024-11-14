@@ -14,6 +14,12 @@ app.get('/', (req, res) => {
   res.status(200).send({ status: 'ok' });
 });
 
+// telebirr notify endpoint
+app.post('/telebirr-notify', (req, res) => {
+  res.status(200).send({ status: 'ok', callback_data: req.body });
+});
+
+
 const api = express.Router();
 
 api.get('/hello', (req, res) => {
