@@ -36,7 +36,7 @@ app.post('/telebirr-notify', async (req, res) => {
   if(!logsDirExists) await fs.mkdir('./logs');
   await fs.writeFile(
     `./logs/callback-data-logs${dateTime}.json`,
-    JSON.stringify(req.body)
+    JSON.stringify(req.body, null, 2)
   );
   res.status(200).send({ status: 'ok', callback_data: req.body });
 });
